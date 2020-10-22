@@ -46,10 +46,10 @@
                      <children>
                         <Label text="type" GridPane.rowIndex="1" />
                         <Label text="number of links" GridPane.rowIndex="2" />
-                        <Label text="Length Link 2" GridPane.rowIndex="3" />
-                        <Label text="Length Link 3" GridPane.rowIndex="4" />
+                        <Label text="Length Link 2 (crank)" GridPane.rowIndex="3" />
+                        <Label text="Length Link 3 (Coupler)" GridPane.rowIndex="4" />
                         <Label text="Length Link 4" GridPane.rowIndex="5" />
-                        <Label text="Length Link 1" GridPane.rowIndex="6" />
+                        <Label text="Length Link 1 (Base)" GridPane.rowIndex="6" />
                         <Label text="Angle Link 1" GridPane.rowIndex="7" />
                         <Label text="Dinstance To Coupler" GridPane.rowIndex="8" />
                         <Label text="Angle To Coupler" GridPane.rowIndex="9" />
@@ -67,9 +67,9 @@
                         <Label text="degrees" GridPane.columnIndex="2" GridPane.rowIndex="10" />
                         <Label text="degrees" GridPane.columnIndex="2" GridPane.rowIndex="11" />
                         <Label text="degrees" GridPane.columnIndex="2" GridPane.rowIndex="12" />
-                        <Label text="degrees/sec" GridPane.columnIndex="2" GridPane.rowIndex="13" />
-                        <ComboBox fx:id="typeSelector" onAction="#setType" prefHeight="26.0" prefWidth="127.0" promptText="Four Bar" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="numOfLinks" onAction="#update" text="4" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="deg/sec" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+                        <ComboBox fx:id="typeSelector" editable="true" onAction="#setType" prefHeight="26.0" prefWidth="127.0" promptText="Four Bar" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="numOfLinks" editable="false" onAction="#update" text="4" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <TextField fx:id="lenLin2" onAction="#update" text="15" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <TextField fx:id="lenLin3" onAction="#update" text="20" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <TextField fx:id="lenLin4" onAction="#update" text="15" GridPane.columnIndex="1" GridPane.rowIndex="5" />
@@ -82,7 +82,7 @@
                         <TextField fx:id="deltaAngle" onAction="#update" text="3" GridPane.columnIndex="1" GridPane.rowIndex="12" />
                         <TextField fx:id="velocityOfCrank" onAction="#update" text="60" GridPane.columnIndex="1" GridPane.rowIndex="13" />
                         <Label text="Direct Crank Control" GridPane.rowIndex="14" />
-                        <Label text="degrees" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+                        <Label GridPane.columnIndex="2" GridPane.rowIndex="14" />
                         <Slider fx:id="positionSlider" onDragDetected="#liveMove" onDragDone="#liveMove" onMouseDragged="#liveMove" GridPane.columnIndex="1" GridPane.rowIndex="14" />
                      </children>
                   </GridPane>
