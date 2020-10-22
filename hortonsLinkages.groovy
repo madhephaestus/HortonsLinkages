@@ -71,17 +71,17 @@ public class HortonsController {
 
 	@FXML
 	void liveMove(MouseEvent event) {
-
+		println "Live move "+positionSlider.getValue()
 	}
 
 	@FXML
 	void setType(ActionEvent event) {
-
+		println "Set Type of Linkage"
 	}
 
 	@FXML
 	void update(ActionEvent event) {
-
+		println "Update Hortons"
 	}
 
 	@FXML // This method is called by the FXMLLoader when initialization is complete
@@ -100,14 +100,17 @@ public class HortonsController {
 		assert deltaAngle != null : "fx:id=\"deltaAngle\" was not injected: check your FXML file 'main.fxml'.";
 		assert velocityOfCrank != null : "fx:id=\"velocityOfCrank\" was not injected: check your FXML file 'main.fxml'.";
 		assert positionSlider != null : "fx:id=\"positionSlider\" was not injected: check your FXML file 'main.fxml'.";
-
+		println "Creating the controller for Hortons!"
+		
 	}
 }
 
 HortonsController controller = new HortonsController()
 
 File xml = ScriptingEngine.fileFromGit("https://github.com/WPIRoboticsEngineering/HortonsLinkages.git", "main.fxml")
-Pane newLoadedPane =  FXMLLoader.load(xml.toURI().toURL());
+FXMLLoader loader = new FXMLLoader(xml.toURI().toURL())
+loader.setController(controller)
+Pane newLoadedPane =  loader.load();
 
 // Create a tab
 Tab myTab = new Tab();

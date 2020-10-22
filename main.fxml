@@ -81,20 +81,20 @@
                         <TextField fx:id="velocityOfCrank" onAction="#update" text="60" GridPane.columnIndex="1" GridPane.rowIndex="12" />
                         <Label text="Direct Crank Control" GridPane.rowIndex="13" />
                         <Label text="degrees" GridPane.columnIndex="2" GridPane.rowIndex="13" />
-                        <Slider fx:id="positionSlider" onDragDetected="#liveMove" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                        <Slider fx:id="positionSlider" onDragDetected="#liveMove" onDragDone="#liveMove" onMouseDragged="#liveMove" GridPane.columnIndex="1" GridPane.rowIndex="13" />
                      </children>
                   </GridPane>
                </children>
         </AnchorPane>
         <AnchorPane>
                <children>
-                  <TableView layoutX="84.0" layoutY="180.0" prefHeight="598.0" prefWidth="629.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-123.0" AnchorPane.topAnchor="0.0">
+                  <TableView layoutX="84.0" layoutY="180.0" prefHeight="598.0" prefWidth="629.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn minWidth="50.0" prefWidth="100.0" text="Link 1 angle" />
-                      <TableColumn minWidth="0.0" prefWidth="115.0" text="Link 2 Angle" />
-                        <TableColumn prefWidth="118.0" text="Link 3 Angle" />
-                        <TableColumn minWidth="0.0" prefWidth="104.0" text="Link 4 Angle" />
-                        <TableColumn prefWidth="161.0" text="Transmission Angle" />
+                      <TableColumn editable="false" minWidth="50.0" prefWidth="100.0" sortable="false" text="Link 1 angle" />
+                      <TableColumn editable="false" minWidth="0.0" prefWidth="115.0" sortable="false" text="Link 2 Angle" />
+                        <TableColumn editable="false" prefWidth="118.0" sortable="false" text="Link 3 Angle" />
+                        <TableColumn editable="false" minWidth="0.0" prefWidth="104.0" sortable="false" text="Link 4 Angle" />
+                        <TableColumn editable="false" prefWidth="161.0" sortable="false" text="Transmission Angle" />
                     </columns>
                   </TableView>
                </children>
