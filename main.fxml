@@ -1,107 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <MenuBar VBox.vgrow="NEVER">
-      <menus>
-        <Menu mnemonicParsing="false" text="File">
-          <items>
-            <MenuItem mnemonicParsing="false" text="New" />
-            <MenuItem mnemonicParsing="false" text="Open…" />
-            <Menu mnemonicParsing="false" text="Open Recent" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Close" />
-            <MenuItem mnemonicParsing="false" text="Save" />
-            <MenuItem mnemonicParsing="false" text="Save As…" />
-            <MenuItem mnemonicParsing="false" text="Revert" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Preferences…" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Quit" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Edit">
-          <items>
-            <MenuItem mnemonicParsing="false" text="Undo" />
-            <MenuItem mnemonicParsing="false" text="Redo" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Cut" />
-            <MenuItem mnemonicParsing="false" text="Copy" />
-            <MenuItem mnemonicParsing="false" text="Paste" />
-            <MenuItem mnemonicParsing="false" text="Delete" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Select All" />
-            <MenuItem mnemonicParsing="false" text="Unselect All" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Help">
-          <items>
-            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
-          </items>
-        </Menu>
-      </menus>
-    </MenuBar>
-    <SplitPane dividerPositions="0.2505567928730512, 0.7505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <SplitPane dividerPositions="0.43207126948775054" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <items>
         <AnchorPane>
-          <children>
-            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Master" textAlignment="CENTER" wrapText="false">
-              <font>
-                <Font size="18.0" fx:id="x1" />
-              </font>
-              <textFill>
-                <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
-              </textFill>
-            </Label>
-          </children>
+               <children>
+                  <GridPane layoutY="14.0" AnchorPane.bottomAnchor="-14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="168.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="127.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="10.0" prefWidth="83.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                      <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="type" />
+                        <Label text="number of links" GridPane.rowIndex="1" />
+                        <Label text="Length Link 2" GridPane.rowIndex="2" />
+                        <Label text="Length Link 3" GridPane.rowIndex="3" />
+                        <Label text="Length Link 4" GridPane.rowIndex="4" />
+                        <Label text="Length Link 1" GridPane.rowIndex="5" />
+                        <Label text="Angle Link 1" GridPane.rowIndex="6" />
+                        <Label text="Dinstance To Coupler" GridPane.rowIndex="7" />
+                        <Label text="Angle To Coupler" GridPane.rowIndex="8" />
+                        <Label text="Start Angle" GridPane.rowIndex="9" />
+                        <Label text="End Angle" GridPane.rowIndex="10" />
+                        <Label text="Delta Angle" GridPane.rowIndex="11" />
+                        <Label text="Crank Angular Velocity" GridPane.rowIndex="12" />
+                        <Label text="mm" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label text="mm" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Label text="mm" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <Label text="mm" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <Label text="mm" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                        <Label text="degrees" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                        <Label text="degrees" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                        <Label text="degrees" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                        <Label text="degrees" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                        <Label text="degrees" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                        <Label text="degrees/sec" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                        <ComboBox fx:id="typeSelector" onAction="#setType" prefHeight="26.0" prefWidth="127.0" promptText="Four Bar" GridPane.columnIndex="1" />
+                        <TextField fx:id="numOfLinks" onAction="#update" text="4" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="lenLin2" onAction="#update" text="15" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="lenLin3" onAction="#update" text="20" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="lenLin4" onAction="#update" text="15" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="lenLin1" onAction="#update" text="10" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="angleLin1" onAction="#update" text="0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="distToCoupler" onAction="#update" text="5" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <TextField fx:id="angleToCoupler" onAction="#update" text="30" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <TextField fx:id="startAngle" onAction="#update" text="0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <TextField fx:id="endAngle" onAction="#update" text="360" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <TextField fx:id="deltaAngle" onAction="#update" text="3" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <TextField fx:id="velocityOfCrank" onAction="#update" text="60" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                        <Label text="Direct Crank Control" GridPane.rowIndex="13" />
+                        <Label text="degrees" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+                        <Slider fx:id="positionSlider" onDragDetected="#liveMove" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                     </children>
+                  </GridPane>
+               </children>
         </AnchorPane>
-        <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
-          <content>
-            <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="430.0">
-              <children>
-                <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="View" textAlignment="CENTER" textFill="$x2" wrapText="false" />
-              </children>
-            </AnchorPane>
-          </content>
-        </ScrollPane>
         <AnchorPane>
           <children>
-            <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Details" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" style="&#10;" text="Details" textAlignment="CENTER" wrapText="false">
+                     <font>
+                <Font size="18.0" fx:id="x1" />
+                     </font>
+                     <textFill>
+                <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
+                     </textFill></Label>
           </children>
         </AnchorPane>
       </items>
     </SplitPane>
-    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
-      <children>
-        <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Left status" HBox.hgrow="ALWAYS">
-          <font>
-            <Font size="11.0" fx:id="x3" />
-          </font>
-          <textFill>
-            <Color blue="0.625" green="0.625" red="0.625" fx:id="x4" />
-          </textFill>
-        </Label>
-        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
-        <Label font="$x3" maxWidth="-1.0" text="Right status" textFill="$x4" HBox.hgrow="NEVER" />
-      </children>
-      <padding>
-        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-      </padding>
-    </HBox>
   </children>
 </VBox>
