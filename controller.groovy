@@ -1,4 +1,5 @@
 import com.neuronrobotics.bowlerstudio.creature.MobileBaseLoader
+import com.neuronrobotics.sdk.addons.kinematics.DHParameterKinematics
 import com.neuronrobotics.sdk.addons.kinematics.MobileBase
 
 import javafx.beans.value.ChangeListener
@@ -81,15 +82,28 @@ public class HortonsController {
 	void liveMove(MouseEvent event) {
 		double lower = Double.parseDouble(startAngle.getText())
 		double upper = Double.parseDouble(endAngle.getText())
-		double range = (upper-lower)*positionSlider.getValue()/100.0;
+		double range =lower+( (upper-lower)*positionSlider.getValue()/100.0);
 		println "Live move "+range
 		
 		setLinkAngle(range)
 	}
 	
 	void setLinkAngle(double angle) {
-		def crank =system.getAllDHChains().get(0).getAbstractLink(0)
-		crank.setCurrentEngineeringUnits(angle)
+		if(angle.isNaN())
+			return;
+		new Thread() {
+			void run() {
+				def limb =system.getAllDHChains().get(0)
+				DHParameterKinematics follower = system.getAllDHChains().get(1)
+				def crank =limb.getAbstractLink(0)
+				crank.setTargetEngineeringUnits(angle)
+				crank.flush(0);
+				Thread.sleep(20)
+				def tipOfCrank= limb.getCurrentTaskSpaceTransform()
+				follower.setDesiredTaskSpaceTransform(tipOfCrank, 0)
+			}
+		}.start();
+		
 	}
 
 	@FXML
@@ -100,6 +114,8 @@ public class HortonsController {
 	@FXML
 	void update(ActionEvent event) {
 		println "Update Hortons"
+		
+		
 		
 	}
 
