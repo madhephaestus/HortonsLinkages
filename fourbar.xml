@@ -36,7 +36,7 @@
 	<lowerLimit>0.0</lowerLimit>
 	<upperVelocity>1.0E8</upperVelocity>
 	<lowerVelocity>-1.0E8</lowerVelocity>
-	<staticOffset>90.0</staticOffset>
+	<staticOffset>0.0</staticOffset>
 	<deviceTheoreticalMax>255.0</deviceTheoreticalMax>
 	<deviceTheoreticalMin>0.0</deviceTheoreticalMin>
 	<isLatch>true</isLatch>
@@ -300,10 +300,10 @@
 	<x>0.0</x>
 	<y>-85.71428571428572</y>
 	<z>1.9032394707859828E-14</z>
-	<rotw>0.5000218161396781</rotw>
-	<rotx>0.5000218161396783</rotx>
-	<roty>0.4999781829083924</roty>
-	<rotz>0.49997818290839213</rotz>
+	<rotw>0.5000218161396782</rotw>
+	<rotx>0.5000218161396784</rotx>
+	<roty>0.4999781829083925</roty>
+	<rotz>0.49997818290839224</rotz>
 </baseToZframe>
 
 </appendage>
