@@ -8,6 +8,11 @@
 		<git>https://github.com/madhephaestus/carl-the-hexapod.git</git>
 		<file>WalkingDriveEngine.groovy</file>
 	</driveEngine>
+	<parallelCadEngine>
+		<parallelGroup>fourbar</parallelGroup>
+		<git>https://gist.github.com/33f2c10ab3adc5bd91f0a58ea7f24d14.git</git>
+		<file>parallelTool.groovy</file>
+	</parallelCadEngine>
 
 <name>FourBarGroup</name>
 <appendage>
@@ -102,6 +107,8 @@
 <appendage>
 
 <name>DefaultArm2</name>
+
+<parallelGroup>fourbar</parallelGroup>
 	<cadEngine>
 		<git>https://gist.github.com/4ef911736d351f44aa1fa178d50c897c.git</git>
 		<file>LinkedCadEngine.groovy</file>
