@@ -79,7 +79,17 @@ public class HortonsController {
 
 	@FXML
 	void liveMove(MouseEvent event) {
-		println "Live move "+positionSlider.getValue()
+		double lower = Double.parseDouble(startAngle.getText())
+		double upper = Double.parseDouble(endAngle.getText())
+		double range = (upper-lower)*positionSlider.getValue()/100.0;
+		println "Live move "+range
+		
+		setLinkAngle(range)
+	}
+	
+	void setLinkAngle(double angle) {
+		def crank =system.getAllDHChains().get(0).getAbstractLink(0)
+		crank.setCurrentEngineeringUnits(angle)
 	}
 
 	@FXML
