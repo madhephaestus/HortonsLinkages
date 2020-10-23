@@ -1,3 +1,6 @@
+import com.neuronrobotics.bowlerstudio.creature.MobileBaseLoader
+import com.neuronrobotics.sdk.addons.kinematics.MobileBase
+
 import javafx.beans.value.ChangeListener
 import javafx.beans.value.ObservableValue
 import javafx.event.ActionEvent
@@ -9,6 +12,7 @@ import javafx.scene.control.TextField
 import javafx.scene.input.MouseEvent
 
 public class HortonsController {
+	MobileBase system;
 
 	@FXML
 	private TableColumn<?, ?> l1AngleColumn;
@@ -86,7 +90,7 @@ public class HortonsController {
 	@FXML
 	void update(ActionEvent event) {
 		println "Update Hortons"
-
+		
 	}
 
 	@FXML // This method is called by the FXMLLoader when initialization is complete
@@ -130,6 +134,14 @@ public class HortonsController {
 		endAngle.focusedProperty().addListener(cl); // Value injected by FXMLLoader
 		deltaAngle.focusedProperty().addListener(cl); // Value injected by FXMLLoader
 		velocityOfCrank.focusedProperty().addListener(cl); // Value injected by FXMLLoader
+		
+		system = DeviceManager.getSpecificDevice( "FourBarGroup",{
+			MobileBase m = MobileBaseLoader.fromGit("https://github.com/WPIRoboticsEngineering/HortonsLinkages.git", "fourbar.xml")
+			return m
+		})
+		
+		
+		update(null)
 	}
 }
 

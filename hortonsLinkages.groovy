@@ -29,6 +29,7 @@ File xml = ScriptingEngine.fileFromGit("https://github.com/WPIRoboticsEngineerin
 FXMLLoader loader = new FXMLLoader(xml.toURI().toURL())
 loader.setController(controller)
 Pane newLoadedPane =  loader.load();
+Thread.sleep(1000);
 
 // Create a tab
 Tab myTab = new Tab();
