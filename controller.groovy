@@ -211,20 +211,7 @@ public class HortonsController {
 		DHParameterKinematics limb =system.getAllDHChains().get(0)
 		DHParameterKinematics follower = system.getAllDHChains().get(1)
 		AbstractLink crank =limb.getAbstractLink(0)
-		//		crank.addLinkListener(new ILinkListener() {
-		//			/**
-		//			 * On link position update.
-		//			 *
-		//			 * @param source the source
-		//			 * @param engineeringUnitsValue the engineering units value
-		//			 */
-		//			public void onLinkPositionUpdate(AbstractLink source,double engineeringUnitsValue) {
-		//				def tipOfCrank= limb.getCurrentTaskSpaceTransform()
-		//				follower.setDesiredTaskSpaceTransform(tipOfCrank, 0)
-		//			}
-		//			public void onLinkLimit(AbstractLink source,PIDLimitEvent event) {}
-		//		}
-		//		)
+
 
 		lenLin2.setText(""+limb.getDH_R(0))
 		lenLin3.setText(""+follower.getDH_R(2))
