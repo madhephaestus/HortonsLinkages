@@ -84,6 +84,7 @@ public class HortonsController {
 
 	@FXML // fx:id="positionSlider"
 	private Slider positionSlider; // Value injected by FXMLLoader
+	private boolean running =false;
 
 	@FXML
 	void liveMove(MouseEvent event) {
@@ -101,12 +102,21 @@ public class HortonsController {
 			return;
 		new Thread() {
 					void run() {
-						def limb =system.getAllDHChains().get(0)
-						DHParameterKinematics follower = system.getAllDHChains().get(1)
-						def crank =limb.getAbstractLink(0)
-						crank.setTargetEngineeringUnits(angle)
-						crank.flush(0);
-						
+						try {
+							DHParameterKinematics limb =system.getAllDHChains().get(0)
+							DHParameterKinematics follower = system.getAllDHChains().get(1)
+							def crank =limb.getAbstractLink(0)
+							crank.setTargetEngineeringUnits(angle)
+							crank.flush(0);
+							//def tipOfCrank= limb.getCurrentTaskSpaceTransform()
+							def angles = limb.getCurrentJointSpaceVector()
+							angles[0]=angle;
+							def tipOfCrank= limb.forwardOffset(limb.forwardKinematics(angles))
+							if(follower.checkTaskSpaceTransform(tipOfCrank))
+								follower.setDesiredTaskSpaceTransform(tipOfCrank, 0)
+						}catch(Throwable t) {
+							t.printStackTrace();
+						}
 					}
 				}.start();
 	}
@@ -118,6 +128,9 @@ public class HortonsController {
 
 	@FXML
 	void update(ActionEvent event) {
+		if(running)
+			return;
+		running =true;
 		new Thread() {
 					void run() {
 						println "Update Hortons"
@@ -134,7 +147,7 @@ public class HortonsController {
 						system.getAllDHChains().get(1).setDH_R(2, Double.parseDouble(lenLin3.getText()))
 						system.getAllDHChains().get(1).setDH_R(1, Double.parseDouble(lenLin4.getText()))
 						TransformNR tf = system.getAllDHChains().get(1).getRobotToFiducialTransform();
-						tf.setY(-Double.parseDouble(lenLin1.getText()))
+						tf.setY(Double.parseDouble(lenLin1.getText()))
 						system.getAllDHChains().get(1).setRobotToFiducialTransform(tf)
 						for(double i=lower;i<=upper;i+=increment) {
 							setLinkAngle(i)
@@ -143,6 +156,7 @@ public class HortonsController {
 						setLinkAngle(0)
 						if(event !=null)
 							MobileBaseCadManager.get(system).generateCad();
+						running =false;
 					}
 				}.start();
 	}
@@ -193,32 +207,32 @@ public class HortonsController {
 			MobileBase m = MobileBaseLoader.fromGit("https://github.com/WPIRoboticsEngineering/HortonsLinkages.git", "fourbar.xml")
 			return m
 		})
-		
+
 		DHParameterKinematics limb =system.getAllDHChains().get(0)
 		DHParameterKinematics follower = system.getAllDHChains().get(1)
 		AbstractLink crank =limb.getAbstractLink(0)
-		crank.addLinkListener(new ILinkListener() {
-			/**
-			 * On link position update.
-			 *
-			 * @param source the source
-			 * @param engineeringUnitsValue the engineering units value
-			 */
-			public void onLinkPositionUpdate(AbstractLink source,double engineeringUnitsValue) {
-				def tipOfCrank= limb.getCurrentTaskSpaceTransform()
-				follower.setDesiredTaskSpaceTransform(tipOfCrank, 0)
-			}
-			public void onLinkLimit(AbstractLink source,PIDLimitEvent event) {}
-		}
-		)
+		//		crank.addLinkListener(new ILinkListener() {
+		//			/**
+		//			 * On link position update.
+		//			 *
+		//			 * @param source the source
+		//			 * @param engineeringUnitsValue the engineering units value
+		//			 */
+		//			public void onLinkPositionUpdate(AbstractLink source,double engineeringUnitsValue) {
+		//				def tipOfCrank= limb.getCurrentTaskSpaceTransform()
+		//				follower.setDesiredTaskSpaceTransform(tipOfCrank, 0)
+		//			}
+		//			public void onLinkLimit(AbstractLink source,PIDLimitEvent event) {}
+		//		}
+		//		)
 
 		lenLin2.setText(""+limb.getDH_R(0))
 		lenLin3.setText(""+follower.getDH_R(2))
 		lenLin4.setText(""+follower.getDH_R(1))
-		lenLin1.setText(""+(-follower.getRobotToFiducialTransform().getY()))
-		
+		lenLin1.setText(""+(follower.getRobotToFiducialTransform().getY()))
+
 		velocityOfCrank.setText("360")
-		
+
 		update(null)
 	}
 }

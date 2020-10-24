@@ -107,8 +107,6 @@
 <appendage>
 
 <name>DefaultArm2</name>
-
-<parallelGroup>fourbar</parallelGroup>
 	<cadEngine>
 		<git>https://gist.github.com/4ef911736d351f44aa1fa178d50c897c.git</git>
 		<file>LinkedCadEngine.groovy</file>
@@ -300,10 +298,10 @@
 	<x>0.0</x>
 	<y>75.0</y>
 	<z>1.9032394707859828E-14</z>
-	<rotw>0.5000218161396782</rotw>
-	<rotx>0.5000218161396784</rotx>
-	<roty>0.4999781829083925</roty>
-	<rotz>0.49997818290839224</rotz>
+	<rotw>0.5000218161396784</rotw>
+	<rotx>0.5000218161396783</rotx>
+	<roty>0.4999781829083921</roty>
+	<rotz>0.49997818290839213</rotz>
 </baseToZframe>
 
 </appendage>
