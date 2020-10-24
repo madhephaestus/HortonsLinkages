@@ -134,7 +134,7 @@ public class HortonsController {
 						system.getAllDHChains().get(1).setDH_R(2, Double.parseDouble(lenLin3.getText()))
 						system.getAllDHChains().get(1).setDH_R(1, Double.parseDouble(lenLin4.getText()))
 						TransformNR tf = system.getAllDHChains().get(1).getRobotToFiducialTransform();
-						tf.setX(Double.parseDouble(lenLin1.getText()))
+						tf.setY(-Double.parseDouble(lenLin1.getText()))
 						system.getAllDHChains().get(1).setRobotToFiducialTransform(tf)
 						for(double i=lower;i<=upper;i+=increment) {
 							setLinkAngle(i)
