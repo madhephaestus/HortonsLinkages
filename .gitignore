@@ -1,3 +1,7 @@
 /.project
 /.classpath
-**.class**
+**.class**/.project
+/.classpath
+/.cproject
+/cache/
+/*.class
