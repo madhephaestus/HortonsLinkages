@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
@@ -13,7 +15,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="600.0" prefWidth="1163.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="600.0" prefWidth="1163.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <SplitPane dividerPositions="0.36003445305770887" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <items>
@@ -84,6 +86,14 @@
                         <Label text="Direct Crank Control" GridPane.rowIndex="14" />
                         <Label GridPane.columnIndex="2" GridPane.rowIndex="14" />
                         <Slider fx:id="positionSlider" onDragDetected="#liveMove" onDragDone="#liveMove" onMouseDragged="#liveMove" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                        <Button mnemonicParsing="false" onAction="#update" text="Run Cycle" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Button>
                      </children>
                   </GridPane>
                </children>
