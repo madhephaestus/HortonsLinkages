@@ -204,7 +204,7 @@ public class HortonsController {
 		velocityOfCrank.focusedProperty().addListener(cl); // Value injected by FXMLLoader
 
 		system = DeviceManager.getSpecificDevice( "FourBarGroup",{
-			MobileBase m = MobileBaseLoader.fromGit("https://github.com/WPIRoboticsEngineering/HortonsLinkages.git", "fourbar.xml")
+			MobileBase m = MobileBaseLoader.fromGit("https://github.com/madhephaestus/HortonsLinkages.git", "fourbar.xml")
 			return m
 		})
 

@@ -20,12 +20,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 def controller = ScriptingEngine.gitScriptRun(
-            "https://github.com/WPIRoboticsEngineering/HortonsLinkages.git", // git location of the library
+            "https://github.com/madhephaestus/HortonsLinkages.git", // git location of the library
             "controller.groovy" , // file to load
             null
             )
 
-File xml = ScriptingEngine.fileFromGit("https://github.com/WPIRoboticsEngineering/HortonsLinkages.git", "main.fxml")
+File xml = ScriptingEngine.fileFromGit("https://github.com/madhephaestus/HortonsLinkages.git", "main.fxml")
 FXMLLoader loader = new FXMLLoader(xml.toURI().toURL())
 loader.setController(controller)
 Pane newLoadedPane =  loader.load();
