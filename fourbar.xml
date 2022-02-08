@@ -9,7 +9,7 @@
 		<file>WalkingDriveEngine.groovy</file>
 	</driveEngine>
 	<parallelCadEngine>
-		<parallelGroup>fourbar</parallelGroup>
+		<parallelGroup>grp</parallelGroup>
 		<git>https://gist.github.com/33f2c10ab3adc5bd91f0a58ea7f24d14.git</git>
 		<file>parallelTool.groovy</file>
 	</parallelCadEngine>
@@ -18,6 +18,8 @@
 <appendage>
 
 <name>TrobotArm</name>
+
+<parallelGroup>grp</parallelGroup>
 	<cadEngine>
 		<git>https://gist.github.com/4ef911736d351f44aa1fa178d50c897c.git</git>
 		<file>LinkedCadEngine.groovy</file>
@@ -107,6 +109,22 @@
 <appendage>
 
 <name>DefaultArm2</name>
+
+<parallelGroup>grp</parallelGroup>
+
+<parallelGroupTipOffset>
+	<x>0.0</x>
+	<y>0.0</y>
+	<z>0.0</z>
+	<rotw>1.0</rotw>
+	<rotx>-0.0</rotx>
+	<roty>-0.0</roty>
+	<rotz>-0.0</rotz>
+	<relativeTo>TrobotArm</relativeTo>
+
+	<relativeToLink>0</relativeToLink>
+
+</parallelGroupTipOffset>
 	<cadEngine>
 		<git>https://gist.github.com/4ef911736d351f44aa1fa178d50c897c.git</git>
 		<file>LinkedCadEngine.groovy</file>
